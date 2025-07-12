@@ -20,52 +20,27 @@ namespace ProblemSolving
     {
         public void Run()
         {
-            int[] nums = [2, 7, 13, 15];
-            int target = 20;
+            //int[] nums = [2, 7, 11, 15];
+            //int target = 9;
+            int[] nums = [-3, 4, 3, 90];
+            int target = 0;
             //int[] res = Logic(nums, target);
             int[] res = logic1(nums, target);
             Console.WriteLine($"[{res[0]} {res[1]}]");
         }
-        public int[] Logic(int[] nums, int target)
-        {
-            int[] indices = new int[2];
-            for (int i = 0; i < nums.Length; i++)
-            {
-                for (int j = 1; j < nums.Length - i; j++)
-                {
-                    if (nums[i] < target && nums[j] < target && nums[i] != nums[j])
-                    {
-                        int num1 = nums[i];
-                        int num2 = nums[j];
-                        if (num1 + num2 == target)
-                        {
-                            indices[0] = num1;
-                            indices[1] = num2;
-                            return indices;
-                        }
-                    }
-                }
-            }
-
-            return indices;
-        }
-
         public int[] logic1(int[] nums, int target)
         {
             Dictionary<int, int> indices = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                if (nums[i] < target)
+                int complement = target - nums[i];
+                if (indices.ContainsKey(complement))
                 {
-                    int complement = target - nums[i];
-                    if (indices.ContainsKey(complement))
-                    {
-                        return new int[] { indices[complement], i };
-                    }
-                    if (!indices.ContainsKey(nums[i]))
-                    {
-                        indices.Add(nums[i], i);
-                    }
+                    return new int[] { indices[complement], i };
+                }
+                if (!indices.ContainsKey(nums[i]))
+                {
+                    indices.Add(nums[i], i);
                 }
             }
             return new int[2];
