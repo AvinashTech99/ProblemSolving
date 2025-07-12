@@ -28,7 +28,7 @@ namespace ProblemSolving
             int[] res = logic1(nums, target);
             Console.WriteLine($"[{res[0]} {res[1]}]");
         }
-        public int[] logic1(int[] nums, int target)
+        public int[] logic1(int[] nums, int target) //Time 1MS for 68 test cases
         {
             Dictionary<int, int> indices = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
