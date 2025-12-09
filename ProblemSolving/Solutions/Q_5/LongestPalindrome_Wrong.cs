@@ -22,7 +22,7 @@ namespace ProblemSolving.Solutions.Q_5
             {
                 return s.Substring(0, 1);
             }
-            while (pointer < s.Length-1)
+            while (pointer < s.Length)
             {
                 if (substring[0] + substring[1] < traversal - pointer)
                 {
