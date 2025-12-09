@@ -4,10 +4,11 @@ using ProblemSolving.Solutions.Q_5;
 
 Console.WriteLine("Hello, World!");
 
-LongestPalindrome_Wrong longestPalindrome = new LongestPalindrome_Wrong();
+LongestPalindrome longestPalindrome = new LongestPalindrome();
+//LongestPalindrome_Wrong longestPalindrome = new LongestPalindrome_Wrong();
 //string result = longestPalindrome.Run("babad");
-string result = longestPalindrome.Run("cbbd");
-//string result = longestPalindrome.Run("ccc");
+//string result = longestPalindrome.Run("cbbd");
+string result = longestPalindrome.Run("ccc");
 Console.WriteLine(result);
 //_1TwoSum twoSum = new _1TwoSum();
 //twoSum.Run();
